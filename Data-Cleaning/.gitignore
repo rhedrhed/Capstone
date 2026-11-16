@@ -1,1 +1,17 @@
-.ipynb_checkpoints/ 
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Node.js
+node_modules/
+Frontend/**/node_modules/
+
+# Environment variables
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
