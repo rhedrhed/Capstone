@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "ReWear AI",
+    "slug": "rewear-ai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}
