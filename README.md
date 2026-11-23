@@ -51,6 +51,52 @@ A re-run produced the same failures. No invalid or corrupt images were found.
 
 `dataset_images/download_mapping.csv` links every record to its Excel file, worksheet and row number, and to its local file.
 
+## Running the project
+
+### Backend (FastAPI)
+
+Requires Python 3 and a Neon PostgreSQL connection string.
+
+```
+cd Backend
+python -m venv .venv                  # or reuse your existing virtualenv
+.venv\Scripts\activate                # Windows (macOS/Linux: source .venv/bin/activate)
+pip install -r requirements.txt
+```
+
+Create `Backend/.env` (git-ignored) with your database URL:
+
+```
+DATABASE_URL=postgresql+psycopg://<user>:<password>@<host>/<db>?sslmode=require
+```
+
+Apply the database migrations (first time and after model changes), then start the server:
+
+```
+alembic upgrade head
+uvicorn app.main:app --reload
+```
+
+- API: http://127.0.0.1:8000
+- Interactive docs: http://127.0.0.1:8000/docs
+- Database check: http://127.0.0.1:8000/db-health (returns `connected` when the DB works)
+
+### Frontend (Expo / React Native)
+
+Requires Node.js and npm. For a phone, install the Expo Go app.
+
+```
+cd Frontend/ReWearAI
+npm install
+npm start          # then scan the QR code with Expo Go
+npm run web        # or open in the browser
+npm run android    # or use an Android emulator
+```
+
+The frontend currently uses mock data. `API_BASE_URL` in `src/services/api.js` is empty and the API calls are TODO stubs.
+Once connected, set it to the backend address, for example `http://<your-computer-ip>:8000`.
+A phone cannot reach `localhost`, so start the backend with `uvicorn app.main:app --reload --host 0.0.0.0`.
+
 ## Re-running the download
 
 ```
