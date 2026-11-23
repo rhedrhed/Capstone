@@ -1,0 +1,41 @@
+DOWNLOAD REPORT
+============================================================
+Excel files processed:            11
+Worksheets inspected:            22 (worksheets without an image_url column are metadata and hold no records)
+Total dataset records:           7320
+Total image URLs identified:     7320
+Successful downloads (valid):    5273  [0 newly downloaded this run, 5273 already on disk]
+Failed downloads:                2047
+Skipped records:                 0
+Not attempted (limit/interrupt): 0
+Duplicate filename conflicts:    0 (resolved by suffixing; none overwritten)
+Missing image URLs:              0
+Missing filenames:               0
+Invalid image files:             0
+Duplicate image URLs (same URL in multiple rows; each row kept as its own record): 14
+Elapsed (last run):              209s
+
+PER CATEGORY
+------------------------------------------------------------
+excel                   turkish     folder        rows    ok  fail  skip
+bluz_cleaned.xlsx       Bluz        blouses        720   576   144     0
+elbise_cleaned.xlsx     Elbise      dresses        120    92    28     0
+etek_cleaned.xlsx       Etek        skirts         720   500   220     0
+gomlek_cleaned.xlsx     Gömlek      shirts         720   529   191     0
+kaban_cleaned.xlsx      Kaban       coats          720   411   309     0
+kazak_cleaned.xlsx      Kazakj      sweaters       720   634    86     0
+mont_cleaned.xlsx       Mont        jackets        720   454   266     0
+pantolon_cleaned.xlsx   Pantolon    trousers       720   490   230     0
+sort_cleaned.xlsx       Şort        shorts         720   520   200     0
+sweatshirt_cleaned.xlsx SweatShirt  sweatshirts    720   494   226     0
+tshirt_cleaned.xlsx     Tshirt      t-shirts       720   573   147     0
+
+WHY DOWNLOADS FAILED
+------------------------------------------------------------
+ 2047  HTTP 404
+
+NOTES
+------------------------------------------------------------
+- Category 'Kazakj' (kazak_cleaned.xlsx) looks like a typo for 'Kazak' (sweater) in the source data; it is preserved verbatim in category_turkish.
+- image_name values have no extension; extensions come from the URL and are confirmed against the actual image format.
+- Original Excel files are read-only inputs and were not modified.
