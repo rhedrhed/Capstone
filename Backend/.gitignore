@@ -1,0 +1,4 @@
+env-pymongo-fastapi-crud/
+__pycache__/
+*.pyc
+.env
